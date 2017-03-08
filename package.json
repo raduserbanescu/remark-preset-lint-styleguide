@@ -1,0 +1,106 @@
+{
+  "name": "remark-preset-lint-styleguide",
+  "version": "0.1.0",
+  "description": "remark preset to configure remark-lint with rules inspired by popular Markdown style guides",
+  "keywords": [
+    "remark",
+    "preset",
+    "remark-lint",
+    "config",
+    "markdown",
+    "styleguide",
+    "lint"
+  ],
+  "homepage": "https://github.com/raduserbanescu/remark-preset-lint-styleguide",
+  "bugs": {
+    "url": "https://github.com/raduserbanescu/remark-preset-lint-styleguide/issues"
+  },
+  "license": "MIT",
+  "author": "Radu Serbanescu (https://www.npmjs.com/~raduserbanescu)",
+  "contributors": [
+    "Radu Serbanescu (https://www.npmjs.com/~raduserbanescu)"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raduserbanescu/remark-preset-lint-styleguide"
+  },
+  "scripts": {
+    "test": "echo 'No tests available'",
+    "prelint": "pjv -wr && echint",
+    "lint": "eslint --ignore-path .gitignore .",
+    "build": "babel src --out-dir .",
+    "build:watch": "npm run build -- --watch",
+    "clean": "rimraf *.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.2.1",
+    "echint": "^4.0.1",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "package-json-validator": "^0.6.1",
+    "rimraf": "^2.6.1"
+  },
+  "echint": {
+    "ignore": [
+      "*.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": 4
+          }
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "env": {
+      "browser": false,
+      "node": true,
+      "es6": true
+    },
+    "rules": {
+      "line-comment-position": "error",
+      "no-inline-comments": "error",
+      "spaced-comment": [
+        "error",
+        "always",
+        {
+          "line": {
+            "exceptions": [
+              "-",
+              "+"
+            ],
+            "markers": [
+              "=",
+              "!",
+              "/"
+            ]
+          },
+          "block": {
+            "exceptions": [
+              "-",
+              "+"
+            ],
+            "markers": [
+              "=",
+              "!"
+            ],
+            "balanced": true
+          }
+        }
+      ]
+    }
+  }
+}
