@@ -114,7 +114,8 @@
   },
   "echint": {
     "ignore": [
-      "*.js"
+      "*.js",
+      "README.md"
     ]
   },
   "babel": {
