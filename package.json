@@ -26,7 +26,7 @@
     "url": "https://github.com/raduserbanescu/remark-preset-lint-styleguide"
   },
   "scripts": {
-    "test": "echo 'No tests available'",
+    "test": "npm run --silent clean && npm run --silent lint && npm run --silent clean",
     "prelint": "pjv -wr && echint",
     "lint": "eslint --ignore-path .gitignore . && npm run --silent lint-md",
     "lint-md": "npm run --silent build -- --quiet && remark --quiet .",
