@@ -1,6 +1,6 @@
 {
   "name": "remark-preset-lint-styleguide",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "remark preset to configure remark-lint with rules inspired by popular Markdown style guides",
   "keywords": [
     "remark",
